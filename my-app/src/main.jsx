@@ -6,6 +6,9 @@ import './lib/fontawesome.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
+// import "lightbox2/dist/css/lightbox.min.css";
+// import "lightbox2/dist/js/lightbox.js";
+
 import './assets/css/style.css'
 
 import App from './App.jsx'

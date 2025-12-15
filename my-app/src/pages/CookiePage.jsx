@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import banner from "../assets/img/banner.jpg"
+import banner from "../assets/img/backgroundc.jpg"
 import image1 from "../assets/img/cookies1.jpg"
 import image2 from "../assets/img/cookies5.jpg"
 import image3 from "../assets/img/cookies3.jpg"
@@ -23,38 +23,18 @@ const CookiePage = () => {
     return (
         <>
             {/* Banner */}
-            <section className="text-center d-flex justify-content-center align-items-center" style={{
-                marginTop: "90px",        
-                marginBottom: "80px",     
-                backgroundAttachment: "fixed",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat"
-                 }} >
-
-                        <div className="col-md-12 mb-4 mb-md-0">
-                            <div id="photoSlider" className="carousel slide" data-bs-ride="carousel">
-                                <div className="carousel-inner">
-                                    <div className="carousel-item active">
-                                        <img src={image1} className="d-block w-100" alt="Photo 1" />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={image2} className="d-block w-100" alt="Photo 2" />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={image3} className="d-block w-100" alt="Photo 3" />
-                                    </div>
-                                </div>
-
-                                <button className="carousel-control-prev" type="button" data-bs-target="#photoSlider" data-bs-slide="prev">
-                                    <span className="carousel-control-prev-icon"></span>
-                                </button>
-                                <button className="carousel-control-next" type="button" data-bs-target="#photoSlider" data-bs-slide="next">
-                                    <span className="carousel-control-next-icon"></span>
-                                </button>
+                        <section className="text-center d-flex justify-content-center align-items-center" style={{
+                            minHeight:"70vh",
+                            backgroundImage:`url(${banner})`,
+                            backgroundSize:"cover",
+                            backgroundPosition:"center",
+                            backgroundRepeat:"no-repeat"
+                        }}>
+                            <div className="text-dark text-center text-white banners">
+                                <h1 className="display-3 text-uppercase bannerheaders fw-bold">Pretty Bake is a homemade bakery.</h1>
                             </div>
-                        </div>
-
-            </section>
+            
+                        </section>
 
             {/* Start Intro Section */}
             <section className="p-4 cookies">
