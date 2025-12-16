@@ -31,8 +31,8 @@ const CakedesginPage = ()=>{
     return(
         <>
             {/* Banner */}
-            <section className="text-center d-flex justify-content-center align-items-center" style={{
-                minHeight:"70vh",
+            <section className="text-center d-flex justify-content-center align-items-center mb-3" style={{
+                minHeight:"100vh",
                 backgroundImage:`url(${banner})`,
                 backgroundSize:"cover",
                 backgroundPosition:"center",
@@ -45,49 +45,14 @@ const CakedesginPage = ()=>{
 
             </section>
 
-            <section className="py-5">
-            <div className="container-fluid">
-
-                 
-                <div className="text-center mb-3">
-                    <div className="col">
-                        <h3 className="titles">Properties</h3>
-                    </div>
-                </div>
-                
+            {/* Start Intro Section */}
+            <section className="intros mb-3 p-2" id="cakedesgins">
 
                 <ul className="list-inline text-start text-uppercase fw-bold">
                     <li className="list-inline-item propertylists activeitems" data-filter="all">All <span className="mx-3 mx-md-5 text-muted">/</span></li>
                     <li className="list-inline-item propertylists" data-filter="house">Cake <span className="mx-3 mx-md-5 text-muted">/</span></li>
                     <li className="list-inline-item propertylists" data-filter="decoration">CupCakes <span className="mx-3 mx-md-5 text-muted"></span></li>
                 </ul>
-
-                {/* <div className="container-fluid">
-                    <div class="d-flex flex-wrap justify-content-center">
-                        <div class="filters house"><a href="./src/assets/img/img/almondcookie.jpg" data-lightbox="property" data-title="Image 1"><img src="./assets/img/img/almondcookie.jpg" width="200px" alt="image1"/></a></div>
-                        <div class="filters house"><a href="./assets/img/img/almondcookie.jpg" data-lightbox="property" data-title="Image 2"><img src="./assets/img/img/almondcookie.jpg" width="200px" alt="image2"/></a></div>
-                        <div class="filters house"><a href="./assets/img/img/almondcookie.jgp" data-lightbox="property" data-title="Image 3"><img src="./assets/img/img/almondcookie.jpg" width="200px" alt="image3"/></a></div>
-                        <div class="filters decoration"><a href="./assets/img/img/almondcookie.jpg" data-lightbox="property" data-title="Image 4"><img src="./assets/img/img/almondcookie.jpg" width="200px" alt="image4"/></a></div>
-                        <div class="filters decoration"><a href="./assets/img/img/almondcookie.jpg" data-lightbox="property" data-title="Image 5"><img src="./assets/img/img/almondcookie.jpg" width="200px" alt="image5"/></a></div>
-                        <div class="filters decoration"><a href="./assets/img/img/almondcookie.jpg" data-lightbox="property" data-title="Image 6"><img src="./assets/img/img/almondcookie.jpg" width="200px" alt="image6"/></a></div>
-                        <div class="filters furniture"><a href="./assets/img/img/almondcookie.jpg" data-lightbox="property" data-title="Image 7"><img src="./assets/img/img/almondcookie.jpg" width="200px" alt="image7"/></a></div>
-                        <div class="filters furniture"><a href="./assets/img/img/almondcookie.jpg" data-lightbox="property" data-title="Image 8"><img src="./assets/img/img/almondcookie.jpg" width="200px" alt="image8"/></a></div>
-                        <div class="filters furniture"><a href="./assets/img/img/almondcookie.jpg" data-lightbox="property" data-title="Image 9"><img src="./assets/img/img/almondcookie.jpg" width="200px" alt="image9"/></a></div>\
-                        <div class="filters office"><a href="./assets/img/img/almondcookie.jpg" data-lightbox="property" data-title="Image 10"><img src="./assets/img/img/almondcookie.jpg" width="200px" alt="image10"/></a></div>
-                        <div class="filters office"><a href="./assets/img/img/almondcookie.jpg" data-lightbox="property" data-title="Image 11"><img src="./assets/img/img/almondcookie.jpg" width="200px" alt="image11"/></a></div>
-                        <div class="filters office"><a href="./assets/img/img/almondcookie.jpg" data-lightbox="property" data-title="Image 12"><img src="./assets/img/img/almondcookie.jpg" width="200px" alt="image12"/></a></div>
-                        <div class="filters decoration"><a href="./assets/img/img/almondcookie.jpg" data-lightbox="property" data-title="Image 13"><img src="./assets/img/img/almondcookie.jpg" width="200px" alt="image13"/></a></div>
-                        <div class="filters decoration"><a href="./assets/img/img/almondcookie.jpg" data-lightbox="property" data-title="Image 14"><img src="./assets/img/img/almondcookie.jpg" width="200px" alt="image14"/></a></div>
-                        <div class="filters house"><a href="./assets/img/img/almondcookie.jpg" data-lightbox="property" data-title="Image 15"><img src="./assets/img/img/almondcookie.jpg" width="200px" alt="image15"/></a></div>
-                        <div class="filters furniture"><a href="./assets/img/img/almondcookie.jpg" data-lightbox="property" data-title="Image 16"><img src="./assets/img/img/almondcookie.jpg" width="200px" alt="image16"/></a></div>
-                    </div>
-                </div> */}
-
-            </div>
-        </section>
-
-            {/* Start Intro Section */}
-            <section className="intros mb-3" id="cakedesgins">
 
             <div className="container-fluid p-3">
 

@@ -24,7 +24,7 @@ const BrowinePage = ()=>{
         <>
             {/* Banner */}
             <section className="text-center d-flex justify-content-center align-items-center" style={{
-                minHeight:"70vh",
+                minHeight:"100vh",
                 backgroundImage:`url(${browine})`,
                 backgroundSize:"cover",
                 backgroundPosition:"center",
