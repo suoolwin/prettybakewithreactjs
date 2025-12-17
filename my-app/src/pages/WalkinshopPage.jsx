@@ -1,7 +1,8 @@
 import React from "react";
 import { useState,useEffect } from "react";
+import { useParams,useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye,faHeart,faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { faEye,faHeart,faCartShopping, faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 import browine from "../assets/img/browine1.jpg"
 import image1 from "../assets/img/img/almondcookie.jpg"
@@ -36,8 +37,13 @@ const PAGESIZE = 8;
 
 const WalkinshopPage = ()=>{
 
+    const {id} = useParams();
+    const navigate = useNavigate()
+    const [item,setItem] = useState(null);
     const [page,setPage] = useState(1);
-
+    const [added,setAdded] = useState(false);
+    const [addedItems,setAddedItems] = useState([]);
+ 
     const walkinshops = [
         {id:1,image:image1,title:"Almondcookie",price:"3000MMK"},
         {id:2,image:image2,title:"ApplePie",price:"6000MMK"},
@@ -64,7 +70,11 @@ const WalkinshopPage = ()=>{
         {id:23,image:image23,title:"BurntCheeseCake",price:"10000MMK"},
         {id:24,image:image24,title:"CarrotCake",price:"5000MMK"},
         {id:25,image:image25,title:"Cinnamnroll",price:"5000MMK"},
-    ]
+        {id:26,image:image26,title:"doublechocolate",price:"5000MMK"},
+        {id:27,image:image27,title:"frenchchocolate",price:"5000MMK"},
+    ];
+
+
 
     const totalPages = Math.ceil(walkinshops.length / PAGESIZE);
     const pageItems = walkinshops.slice((page-1) * PAGESIZE, page * PAGESIZE); 
@@ -72,6 +82,20 @@ const WalkinshopPage = ()=>{
     useEffect(()=>{
         if(page > totalPages) setPage(1);
     },[page,totalPages]);
+
+    const addToCartHandler = (product) => {
+
+        const cartdatas = JSON.parse(localStorage.getItem("cart")) || [];
+        const exists = cartdatas.find(cartdata => cartdata.id == product.id);
+
+        if(!exists){
+            cartdatas.push(product);
+            localStorage.setItem("cart",JSON.stringify(cartdatas));
+        }
+
+        setAddedItems(prev => [...prev, product.id]);
+
+    }
 
     return(
         <>
@@ -121,8 +145,8 @@ const WalkinshopPage = ()=>{
                                             <button type="button" className="btn btn-secondary" title="Add to Wishlist">
                                                 <FontAwesomeIcon icon={faHeart} />
                                             </button>
-                                            <button type="button" className="btn btn-secondary" title="Add to Cart">
-                                                <FontAwesomeIcon icon={faCartShopping} />
+                                            <button type="button" className="btn btn-secondary" onClick={()=>addToCartHandler(walkinshop)} disabled={addedItems.includes(walkinshop.id)}>
+                                                {addedItems.includes(walkinshop.id) ? (<FontAwesomeIcon icon={faCartShopping} />) : (<FontAwesomeIcon icon={faCartPlus} />)}
                                             </button>
                                         </div>
 
@@ -153,6 +177,15 @@ const WalkinshopPage = ()=>{
                     </div>
                 </div>
 
+                {/* go to cart  */}
+                            {addedItems && (
+                                <div className="d-flex justify-content-center p-2"> 
+                                    <button className="btn btn-outline-primary" onClick={()=> navigate("/carts")}>
+                                        <FontAwesomeIcon icon={faCartShopping} /> Go to Cart
+                                    </button>
+                                </div>
+                            )}
+
                 {/* pagination  */}
                 {
                     totalPages > 1 && (
@@ -175,6 +208,9 @@ const WalkinshopPage = ()=>{
                         </nav>
                     )
                 }
+
+                
+                
             </section>
 
             {/* End Intro Section  */}

@@ -10,6 +10,7 @@ import CookiePage from "./pages/CookiePage.jsx";
 import BrowinePage from "./pages/BrowinePage.jsx";
 import HomedelieveryPage from "./pages/HomedeliveryPage.jsx";
 import WalkinshopPage from "./pages/WalkinshopPage.jsx";
+import CartPage from './pages/CartPage.jsx';
 
 function App() {
 
@@ -27,6 +28,8 @@ function App() {
             <Route path="/cookies" element={<CookiePage />} />
             <Route path="/browines" element={<BrowinePage />} />
             <Route path="/homedeliverys" element={<HomedelieveryPage />} />
+
+            <Route path="/carts" element={<CartPage />} />
         </Routes>
 
         <Footer />
